@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # TestePrimeng
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
@@ -26,6 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
 =======
 # angular-primeng
->>>>>>> fd60876149f1ce39323180c250714dfac85fb669
+>>>>>>> 978849741c53aa1bbf1ef505b8fce21d96663c51
