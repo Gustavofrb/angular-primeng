@@ -1,0 +1,40 @@
+<div class="home grid grid-nogutter surface-section text-800">
+  <div
+    class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center"
+  >
+    <section>
+      <h1>Heroes a Escola de Dev's</h1>
+      <span class="block text-6xl font-bold mb-1">Crie Telas</span>
+      <div class="text-6xl text-primary font-bold mb-3">
+        seus visitantes merecem ver!
+      </div>
+
+      <button
+        pButton
+        pRipple
+        label="Acessar"
+        type="button"
+        class="mr-3 p-button-raised"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Demonstração ao vivo"
+        type="button"
+        class="p-button-outlined"
+      ></button>
+    </section>
+  </div>
+  <div class="col-12 md:col-6 overflow-hidden">
+    <img
+      src="/assets/images/hero-1.png"
+      alt="Image"
+      class="md:ml-auto block md:h-full"
+      style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)"
+    />
+  </div>
+  <div class="button-logout">
+    <p-button label="Sair" [loading]="loading" (onClick)="onLogout()"></p-button>
+   
+</div>
+
