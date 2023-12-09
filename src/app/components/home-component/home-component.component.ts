@@ -31,4 +31,5 @@ export class HomeComponentComponent {
     localStorage.removeItem('login');
     this.router.navigate(['/login']);
   }
+  
 }

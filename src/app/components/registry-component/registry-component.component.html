@@ -1,66 +1,57 @@
-<div class="form-container">
-  <div class="field">
-    <label for="fullname">Nome Completo</label>
-    <input id="fullname" type="text" placeholder="Digite seu nome completo" />
-  </div>
-  <div class="field">
-    <label for="Email">Email</label>
-    <input id="Email" type="text" placeholder="Digite seu email" />
-  </div>
-  <div class="field">
-    <label for="dob">Data de Nascimento</label>
-    <input id="dob" type="date" />
-  </div>
-  <div class="field">
-    <label for="">Estado Civil</label>
-    <select id="maritalStatus">
-      <option value="single">Solteiro(a)</option>
-      <option value="married">Casado(a)</option>
-      <option value="divorced">Viúvo(a)</option>
-    </select>
-  </div>
-  <div class="field">
-    <label for="phone">Telefone</label>
-    <input id="phone" type="tel" placeholder="Telefone" />
-  </div>
-  <div class="field">
-    <label for="state">Estado</label>
-    <select id="state" (change)="onStateChange($event)">
-      <option *ngFor="let estado of estadosBrasileiros" [value]="estado">
-        {{ estado }}
-      </option>
-    </select>
-  </div>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div class="form-container">
+    <div class="field">
+      <label for="fullname">Nome Completo</label>
+      <input id="fullname" type="text" placeholder="Digite seu nome completo" name="fullName" ngModel />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="text" placeholder="Digite seu email" name="email" ngModel />
+    </div>
+    <div class="field">
+      <label for="dob">Data de Nascimento</label>
+      <input id="dob" type="date" name="dateOfBirth" ngModel />
+    </div>
+    <div class="field">
+      <label for="maritalStatus">Estado Civil</label>
+      <select id="maritalStatus" name="maritalStatus" ngModel>
+        <option value="single">Solteiro(a)</option>
+        <option value="married">Casado(a)</option>
+        <option value="divorced">Viúvo(a)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="phone">Telefone</label>
+      <input id="phone" type="tel" placeholder="Telefone" name="phone" ngModel />
+    </div>
+    <div class="field">
+      <label for="state">Estado</label>
+    
 
-  <div class="field">
-    <label for="city">Cidade</label>
-    <select id="city">
-      <option
-        *ngFor="let cidade of cidadesDoEstadoSelecionado"
-        [value]="cidade"
-      >
-        {{ cidade }}
-      </option>
-    </select>
-  </div>
+      <label for="city">Cidade</label>
+      <select id="city" name="city" ngModel>
+  
+        <option *ngFor="let cidade of cidadesDoEstadoSelecionado" [value]="cidade">{{ cidade }}</option>
+      </select>
+    </div>
 
-  <div class="field">
-    <label for="street">Rua</label>
-    <input id="street" type="text" placeholder="Rua" />
+    <div class="field">
+      <label for="street">Rua</label>
+      <input id="street" type="text" placeholder="Rua" name="street" ngModel />
+    </div>
+    <div class="field">
+      <label for="houseNumber">Número da Casa</label>
+      <input id="houseNumber" type="text" placeholder="Número da Casa" name="houseNumber" ngModel />
+    </div>
+    <div class="field">
+      <label for="neighborhood">Bairro</label>
+      <input id="neighborhood" type="text" placeholder="Bairro" name="neighborhood" ngModel />
+    </div>
+    <div class="field">
+      <label for="password">Senha</label>
+      <input id="password" type="password" placeholder="Digite sua senha" name="password" ngModel />
+    </div>
+
+    <button pButton pRipple label="Eviar" class=""></button>
   </div>
-  <div class="field">
-    <label for="houseNumber">Número da Casa</label>
-    <input id="houseNumber" type="text" placeholder="Número da Casa" />
-  </div>
-  <div class="field">
-    <label for="neighborhood">Bairro</label>
-    <input id="neighborhood" type="text" placeholder="Bairro" />
-  </div>
-  <div class="field">
-    <label for="password">Senha</label>
-    <input id="password" type="password" placeholder="Digite sua senha" />
-  </div>
-  <form (ngSubmit)="submitForm(f)" #f="ngForm">
-    <button type="submit">Enviar</button>
-  </form>
-</div>
+</form>
