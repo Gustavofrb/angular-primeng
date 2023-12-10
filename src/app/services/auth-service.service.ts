@@ -33,4 +33,11 @@ export class AuthService {
   isLoggedInUser(): Observable<boolean> {
     return of(this.isLoggedIn);
   }
+  register(user: User): Observable<boolean> {
+    return this.http.post<any>(`${this.apiUrl}`, user).pipe(
+      map((response) => {
+        return !!response;
+      })
+    );
+  }
 }

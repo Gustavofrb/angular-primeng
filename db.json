@@ -23,6 +23,14 @@
       "username": "Pedro",
       "email": "123",
       "password": "123"
+    },
+    {
+      "id": 5,
+      "email": "gustavofrbjp@hotmail.com",
+      "password": "1234",
+      "fullname": "gustavo",
+      "dateOfBirth": "2023-11-30",
+      "maritalStatus": "married"
     }
   ]
 }
