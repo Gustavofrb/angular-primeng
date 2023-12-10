@@ -11,17 +11,13 @@ import { filter } from 'rxjs/operators';
 export class HomeComponentComponent {
   loading: boolean = false;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
- 
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
-        this.loading = false; 
+        this.loading = false;
       });
   }
 
@@ -31,5 +27,8 @@ export class HomeComponentComponent {
     localStorage.removeItem('login');
     this.router.navigate(['/login']);
   }
-  
+
+  navegarParaCursos(): void {
+    this.router.navigate(['/cursos']);
+  }
 }

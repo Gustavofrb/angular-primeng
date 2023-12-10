@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NonServiceService } from 'src/app/services/non-service.service';
-import { MessageService } from 'primeng/api';
+
 interface CidadesPorEstado {
   [key: string]: string[];
 }
@@ -12,8 +12,6 @@ interface CidadesPorEstado {
   styleUrls: ['./registry-component.component.scss'],
 })
 export class RegistryComponentComponent {
-  constructor(private nonService: NonServiceService) {}
-
   estadosBrasileiros: string[] = ['São Paulo', 'Rio de Janeiro'];
   cidadesPorEstado: CidadesPorEstado = {
     'São Paulo': ['São Paulo', 'Campinas', 'Guarulhos', 'Santo André'],
@@ -21,9 +19,19 @@ export class RegistryComponentComponent {
   };
   cidadesDoEstadoSelecionado: string[] = [];
 
+  constructor(private nonService: NonServiceService) {}
+
+  onStateChange(event: Event): void {
+    const selectedState = (event.target as HTMLSelectElement).value;
+    if (selectedState) { 
+    this.cidadesDoEstadoSelecionado = this.cidadesPorEstado[selectedState];
+  } else {
+    this.cidadesDoEstadoSelecionado = []; 
+  }
+}
+
+
   onSubmit(form: NgForm): void {
     this.nonService.submitForm(form);
   }
-
- 
 }

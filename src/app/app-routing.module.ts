@@ -4,6 +4,7 @@ import { FirstComponentComponent } from './components/first-component/first-comp
 import { HomeComponentComponent } from './components/home-component/home-component.component';
 import { RegistryComponentComponent } from './components/registry-component/registry-component.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { CoursesComponent } from './components/courses/courses.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'cadastro',
     component: RegistryComponentComponent,
+  },
+  {
+    path: 'cursos',
+    component: CoursesComponent,
   },
 ];
 

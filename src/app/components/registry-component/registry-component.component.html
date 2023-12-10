@@ -2,11 +2,23 @@
   <div class="form-container">
     <div class="field">
       <label for="fullname">Nome Completo</label>
-      <input id="fullname" type="text" placeholder="Digite seu nome completo" name="fullName" ngModel />
+      <input
+        id="fullname"
+        type="text"
+        placeholder="Digite seu nome completo"
+        name="fullName"
+        ngModel
+      />
     </div>
     <div class="field">
       <label for="email">Email</label>
-      <input id="email" type="text" placeholder="Digite seu email" name="email" ngModel />
+      <input
+        id="email"
+        type="text"
+        placeholder="Digite seu email"
+        name="email"
+        ngModel
+      />
     </div>
     <div class="field">
       <label for="dob">Data de Nascimento</label>
@@ -22,16 +34,30 @@
     </div>
     <div class="field">
       <label for="phone">Telefone</label>
-      <input id="phone" type="tel" placeholder="Telefone" name="phone" ngModel />
+      <input
+        id="phone"
+        type="tel"
+        placeholder="Telefone"
+        name="phone"
+        ngModel
+      />
     </div>
     <div class="field">
       <label for="state">Estado</label>
-    
+      <select id="estate" name="state" ngModel (change)="onStateChange($event)">
+        <option *ngFor="let estado of estadosBrasileiros" [value]="estado">
+          {{ estado }}
+        </option>
+      </select>
 
       <label for="city">Cidade</label>
       <select id="city" name="city" ngModel>
-  
-        <option *ngFor="let cidade of cidadesDoEstadoSelecionado" [value]="cidade">{{ cidade }}</option>
+        <option
+          *ngFor="let cidade of cidadesDoEstadoSelecionado"
+          [value]="cidade"
+        >
+          {{ cidade }}
+        </option>
       </select>
     </div>
 
@@ -41,17 +67,35 @@
     </div>
     <div class="field">
       <label for="houseNumber">Número da Casa</label>
-      <input id="houseNumber" type="text" placeholder="Número da Casa" name="houseNumber" ngModel />
+      <input
+        id="houseNumber"
+        type="text"
+        placeholder="Número da Casa"
+        name="houseNumber"
+        ngModel
+      />
     </div>
     <div class="field">
       <label for="neighborhood">Bairro</label>
-      <input id="neighborhood" type="text" placeholder="Bairro" name="neighborhood" ngModel />
+      <input
+        id="neighborhood"
+        type="text"
+        placeholder="Bairro"
+        name="neighborhood"
+        ngModel
+      />
     </div>
     <div class="field">
       <label for="password">Senha</label>
-      <input id="password" type="password" placeholder="Digite sua senha" name="password" ngModel />
+      <input
+        id="password"
+        type="password"
+        placeholder="Digite sua senha"
+        name="password"
+        ngModel
+      />
     </div>
 
-    <button pButton pRipple label="Eviar" class=""></button>
+    <button pButton pRipple label="Enviar" class=""></button>
   </div>
 </form>
