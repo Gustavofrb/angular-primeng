@@ -5,6 +5,7 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { RegistryComponentComponent } from './components/registry-component/registry-component.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { CoursesComponent } from './components/courses/courses.component';
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'cursos',
     component: CoursesComponent,
+  },
+  {
+    path: 'carrinho',
+    component: CarrinhoComponent,
   },
 ];
 

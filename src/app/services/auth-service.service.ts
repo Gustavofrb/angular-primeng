@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({
@@ -22,6 +22,10 @@ export class AuthService {
         const isLoggedIn = !!foundUser;
         this.isLoggedIn = isLoggedIn;
         return isLoggedIn;
+      }),
+      catchError((error) => {
+        console.error('Erro no login:', error);
+        return of(false);
       })
     );
   }
@@ -33,10 +37,30 @@ export class AuthService {
   isLoggedInUser(): Observable<boolean> {
     return of(this.isLoggedIn);
   }
+
+  isEmailUnique(email: string): Observable<boolean> {
+    return this.http.get<User[]>(`${this.apiUrl}`).pipe(
+      map((users: User[]) => {
+        return !users.some((user) => user.email === email);
+      }),
+      catchError(() => {
+        return of(true);
+      })
+    );
+  }
+
   register(user: User): Observable<boolean> {
-    return this.http.post<any>(`${this.apiUrl}`, user).pipe(
-      map((response) => {
-        return !!response;
+    return this.isEmailUnique(user.email).pipe(
+      switchMap((isUnique: boolean) => {
+        if (isUnique) {
+          return this.http.post<any>(`${this.apiUrl}`, user).pipe(
+            map((response) => {
+              return !!response;
+            })
+          );
+        } else {
+          return of(false);
+        }
       })
     );
   }

@@ -15,6 +15,7 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { RegistryComponentComponent } from './components/registry-component/registry-component.component';
 import { AuthInterceptor } from './services/auth-interceptor.service';
 import { CoursesComponent } from './components/courses/courses.component';
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 
 const primeNGModules = [
   InputTextModule,
@@ -30,6 +31,7 @@ const primeNGModules = [
     FirstComponentComponent,
     HomeComponentComponent,
     CoursesComponent,
+    CarrinhoComponent,
    
   ],
   imports: [

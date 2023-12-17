@@ -24,23 +24,12 @@
     </div>
     <div class="field">
       <label for="dob">Data de Nascimento</label>
-      <input
-        id="dob"
-        type="date"
-        name="dateOfBirth"
-        ngModel
-        required
-      />
+      <input id="dob" type="date" name="dateOfBirth" ngModel required />
     </div>
-    
+
     <div class="field">
       <label for="maritalStatus">Estado Civil</label>
-      <select 
-      id="maritalStatus" 
-      name="maritalStatus" 
-      ngModel
-      required
-      >
+      <select id="maritalStatus" name="maritalStatus" ngModel required>
         <option value="single">Solteiro(a)</option>
         <option value="married">Casado(a)</option>
         <option value="divorced">Viúvo(a)</option>
@@ -59,10 +48,12 @@
     </div>
     <div class="field">
       <label for="state">Estado</label>
-      <select id="estate" 
-      name="state" 
-      ngModel (change)="onStateChange($event)"
-      required
+      <select
+        id="estate"
+        name="state"
+        ngModel
+        (change)="onStateChange($event)"
+        required
       >
         <option *ngFor="let estado of estadosBrasileiros" [value]="estado">
           {{ estado }}
@@ -70,11 +61,7 @@
       </select>
 
       <label for="city">Cidade</label>
-      <select id="city"
-       name="city" 
-       ngModel
-       required
-       >
+      <select id="city" name="city" ngModel required>
         <option
           *ngFor="let cidade of cidadesDoEstadoSelecionado"
           [value]="cidade"
@@ -86,13 +73,14 @@
 
     <div class="field">
       <label for="street">Rua</label>
-      <input id="street"
-       type="text" 
-       placeholder="Rua" 
-       name="street" 
-       ngModel
-       required="cidade"
-       />
+      <input
+        id="street"
+        type="text"
+        placeholder="Rua"
+        name="street"
+        ngModel
+        required="cidade"
+      />
     </div>
     <div class="field">
       <label for="houseNumber">Número da Casa</label>

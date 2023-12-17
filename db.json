@@ -27,10 +27,26 @@
     {
       "id": 5,
       "email": "gustavofrbjp@hotmail.com",
-      "password": "1234",
+      "password": "123",
       "fullname": "gustavo",
-      "dateOfBirth": "2023-11-30",
+      "dateOfBirth": "2023-12-12",
       "maritalStatus": "married"
+    },
+    {
+      "id": 6,
+      "email": "mateusgay",
+      "password": "123",
+      "fullname": "mateus",
+      "dateOfBirth": "2023-12-16",
+      "maritalStatus": "married"
+    },
+    {
+      "id": 7,
+      "email": "mateusgay1",
+      "password": "123",
+      "fullname": "gustavo",
+      "dateOfBirth": "2023-12-23",
+      "maritalStatus": "divorced"
     }
   ]
 }

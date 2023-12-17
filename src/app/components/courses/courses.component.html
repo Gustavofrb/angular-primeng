@@ -1,6 +1,37 @@
 <div class="surface-ground px-4 py-8 md:px-6 lg:px-8">
   <div>
-    <p-button label="Voltar" (click)="redirecionarParaHome()"></p-button>
+    <button
+      (click)="redirecionarParaHome()"
+      style="
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border: none;
+        background-color: transparent;
+      "
+    >
+      <button
+        (click)="redirecionarParaCarrinho()"
+        style="
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          border: none;
+          z-index: 9999;
+        "
+        pButton
+        pRipple
+        label=""
+        class="p-button p-button-success"
+      >
+        <i class="pi pi-shopping-cart"></i>
+      </button>
+
+      <i
+        class="pi pi-home"
+        style="color: rgb(45, 10, 245); font-size: 25px"
+      ></i>
+    </button>
   </div>
   <div class="text-900 font-bold text-6xl mb-4 text-center">
     Conheça nosso cursos!
@@ -51,8 +82,9 @@
           <button
             pButton
             pRipple
-            label="Buy Now"
-            class="p-3 w-full mt-auto"
+            label="Adiconar ao carrinho"
+            class="p-3 w-full"
+            (click)="adicionarAoCarrinho(cursoCSS)"
           ></button>
         </div>
       </div>
@@ -94,7 +126,13 @@
             </li>
           </ul>
           <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
-          <button pButton pRipple label="Buy Now" class="p-3 w-full"></button>
+          <button
+            pButton
+            pRipple
+            label="Adiconar ao carrinho"
+            class="p-3 w-full"
+            (click)="adicionarAoCarrinho(cursoJavaScript)"
+          ></button>
         </div>
       </div>
     </div>
@@ -145,7 +183,13 @@
             </li>
           </ul>
           <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
-          <button pButton pRipple label="Buy Now" class="p-3 w-full"></button>
+          <button
+            pButton
+            pRipple
+            label="Adiconar ao carrinho"
+            class="p-3 w-full"
+            (click)="adicionarAoCarrinho(cursoAngular)"
+          ></button>
         </div>
       </div>
     </div>

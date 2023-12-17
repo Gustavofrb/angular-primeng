@@ -10,13 +10,13 @@
       </div>
 
       <button
-      pButton
-      pRipple
-      label="Acessar"
-      type="button"
-      class="mr-3 p-button-raised"
-      (click)="navegarParaCursos()"
-    ></button>
+        pButton
+        pRipple
+        label="Acessar"
+        type="button"
+        class="mr-3 p-button-raised"
+        (click)="navegarParaCursos()"
+      ></button>
       <button
         pButton
         pRipple
@@ -35,7 +35,10 @@
     />
   </div>
   <div class="button-logout">
-    <p-button label="Sair" [loading]="loading" (onClick)="onLogout()"></p-button>
-   
+    <p-button
+      label="Sair"
+      [loading]="loading"
+      (onClick)="onLogout()"
+    ></p-button>
+  </div>
 </div>
-

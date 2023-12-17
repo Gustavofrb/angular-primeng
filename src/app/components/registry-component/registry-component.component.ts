@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth-service.service';
 import { MessageService } from 'primeng/api';
+import { AuthService } from 'src/app/services/auth-service.service';
 import { User } from './../../interfaces/user.interface';
 
 interface CidadesPorEstado {
@@ -24,8 +24,10 @@ export class RegistryComponentComponent {
   };
   cidadesDoEstadoSelecionado: string[] = [];
 
+  emailAlreadyExists = false;
+
   constructor(
-    private authServiceInstance: AuthService,
+    authServiceInstance: AuthService,
     private router: Router,
     private messageService: MessageService
   ) {
@@ -41,24 +43,22 @@ export class RegistryComponentComponent {
     }
   }
 
-  onSubmit(form: NgForm): void {
-   
-  }
+  onSubmit(form: NgForm): void {}
 
   onRegistry(form: NgForm): void {
     if (form.invalid) {
-    
       this.messageService.add({
         key: 'bc',
         severity: 'warn',
         summary: 'Erro!',
         detail: 'Por favor, preencha todos os campos corretamente.',
       });
-      return; 
+      return;
     }
-  
-    const { email, password, fullName, dateOfBirth, maritalStatus } = form.value;
-  
+
+    const { email, password, fullName, dateOfBirth, maritalStatus } =
+      form.value;
+
     const user: User = {
       id: 0,
       email,
@@ -66,9 +66,8 @@ export class RegistryComponentComponent {
       fullname: fullName,
       dateOfBirth,
       maritalStatus,
-   
     };
-  
+
     this.authService.register(user).subscribe({
       next: (response) => {
         if (response) {
@@ -77,9 +76,11 @@ export class RegistryComponentComponent {
             key: 'bc',
             severity: 'success',
             summary: 'Sucesso!',
-            detail: 'Usuário registrado com sucesso. Faça o login para continuar.',
+            detail:
+              'Usuário registrado com sucesso. Faça o login para continuar.',
           });
         } else {
+          this.emailAlreadyExists = true;
           this.messageService.add({
             key: 'bc',
             severity: 'warn',
@@ -90,4 +91,4 @@ export class RegistryComponentComponent {
       },
     });
   }
-}  
+}
