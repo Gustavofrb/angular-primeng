@@ -1,10 +1,12 @@
-<div *ngIf="itensNoCarrinho.length > 0">
-  <div *ngFor="let item of itensNoCarrinho; let i = index">
-    <p>{{ item.name }} - R$ {{ item.price }}</p>
-    <button (click)="removerDoCarrinho(i)">Remover</button>
+<div class="carrinho">
+  <div *ngIf="itensNoCarrinho.length > 0">
+    <div class="item-carrinho" *ngFor="let item of itensNoCarrinho; let i = index">
+      <p>{{ item.name }} - R$ {{ item.price }}</p>
+      <button (click)="removerDoCarrinho(i)">Remover</button>
+    </div>
+    <p class="total">Total: R$ {{ total }}</p>
   </div>
-  <p>Total: R$ {{ total }}</p>
-</div>
-<div *ngIf="itensNoCarrinho.length === 0">
-  <p>O carrinho está vazio</p>
+  <div *ngIf="itensNoCarrinho.length === 0">
+    <p>O carrinho está vazio</p>
+  </div>
 </div>

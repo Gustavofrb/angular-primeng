@@ -1,0 +1,33 @@
+.carrinho {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .item-carrinho {
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .item-carrinho p {
+    margin: 0;
+  }
+  
+  button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e04e28;
+  }
+  

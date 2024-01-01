@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-courses',
@@ -25,7 +26,8 @@ export class CoursesComponent {
 
   constructor(
     private router: Router,
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    private messageService: MessageService
   ) {}
 
   redirecionarParaHome(): void {
@@ -39,5 +41,11 @@ export class CoursesComponent {
   adicionarAoCarrinho(curso: any) {
     this.carrinhoService.adicionarItem(curso);
     console.log('Item Adicionado');
+    this.messageService.add({
+      key: 'bc',
+      severity: 'success',
+      summary: 'Sucesso!',
+      detail: 'Adicionado ao carrinho com sucesso.',
+    });
   }
 }

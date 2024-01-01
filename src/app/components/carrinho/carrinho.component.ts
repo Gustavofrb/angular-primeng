@@ -28,4 +28,5 @@ export class CarrinhoComponent implements OnInit {
     this.carrinhoService.removerItem(index);
     this.atualizarCarrinho();
   }
+  
 }
